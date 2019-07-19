@@ -13,10 +13,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'leo'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 # JWT creates a new endpoint: /auth, it calls the authenticate method with users
 # and password and then /auth returns a JWT token
 # And then the JWT token can be sent to the next requests. JWT calls the identity function
